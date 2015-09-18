@@ -1,3 +1,12 @@
+/*
+ * Author: Jason Boutte
+ *
+ * Class: CSCI-498 
+ * Title: Homework 3
+ * Date: 9-17-2015
+ *
+ * Find all palindrones in string.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
