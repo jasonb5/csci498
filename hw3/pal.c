@@ -70,6 +70,14 @@ int main(int argc, char **argv) {
   }
 
   // Uses dp to find all substrings containing a palindrone
+  // Let M contain a sequence of characters of length n
+  // Let T be a table of size n x n
+  // Set principal and previous diagnol to 1
+  // Recurence relation:
+  // T[j-i][j] = 1 if T[j-i+1][j-1] == 1 and M[j-i] == M[y]
+  //  1 <= i < n and i <= j < n
+  // Otherwise
+  // T[j-i][j] = 0
   for (x = 1; x < size; ++x) {
     for (y = x; y < size; ++y) {
       if (matrix[y-x+1][y-1] == 1) {
