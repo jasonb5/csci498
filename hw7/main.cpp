@@ -20,5 +20,7 @@ int main(int argc, char **argv) {
 
     huff.generate_tree(samples);
 
+    huff.print_codes();
+
     return 0;
 }

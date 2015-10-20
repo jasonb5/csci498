@@ -1,1 +1,1 @@
-main: huffman.cpp
+main: huffman.o
