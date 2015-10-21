@@ -8,7 +8,7 @@ void Huffman::generate_tree(std::vector<int> *samples) {
     for (int i = 0; i < samples->size(); ++i) {
         if ((*samples)[i] == 0) continue;
 
-        printf("%c %d\n", 'A'+i, (*samples)[i]);
+        //printf("%c %d\n", 'A'+i, (*samples)[i]);
 
         Node *node = new Node();
 
