@@ -1,5 +1,7 @@
 #include <stack>
 #include <stdio.h>
+#include <vector>
+#include <fstream>
 
 #include "huffman.h"
 
@@ -8,7 +10,7 @@ void Huffman::generate_tree(std::vector<int> *samples) {
     for (int i = 0; i < samples->size(); ++i) {
         if ((*samples)[i] == 0) continue;
 
-        //printf("%c %d\n", 'A'+i, (*samples)[i]);
+        printf("%c %d\n", 'A'+i, (*samples)[i]);
 
         Node *node = new Node();
 
@@ -92,6 +94,28 @@ void Huffman::print_codes() {
     for (int i = 0; i < 26; ++i) {
         if (result[i] == NULL) continue;
 
-        printf("%c\t%s\n", 'A'+i, result[i]->c_str());
+        printf("%c %s\n", 'A'+i, result[i]->c_str());
     }
+}
+
+int main(int argc, char **argv) {
+    char c;
+    std::ifstream ifs(argv[1], std::ifstream::in);
+    std::vector<int> *samples = new std::vector<int>(26, 0);
+
+    while (ifs.good()) {
+        c = ifs.get();
+
+        (*samples)[c-'A']++;
+    }
+
+    ifs.close();
+
+    Huffman huff;
+
+    huff.generate_tree(samples);
+
+    huff.print_codes();
+
+    return 0;
 }

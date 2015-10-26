@@ -1,1 +1,4 @@
-main: huffman.o
+huffman:
+
+clean:
+	rm huffman
