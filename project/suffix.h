@@ -16,11 +16,14 @@ class SuffixTree {
   SuffixTree(char *str);
   ~SuffixTree();
 
+  int Child(Node *n, char c);
+
+  void PrintTree();
   void BuildTree();
 
  private:
   Node *root_;
-  std::string *str_;
+  std::string str_;
 };
 
 #endif // PROJECT_SUFFIX_H_
